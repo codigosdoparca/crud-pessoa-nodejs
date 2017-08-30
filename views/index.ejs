@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+   <!-- <h1><%= title %></h1>
+   <p>Welcome to <%= title %></p> -->
+
+   <h1><%= title %></h1>
+     <ul>
+      <% docs.forEach(function(pessoa){ %>
+        <li>
+           <a href="/edit/<%= pessoa.pessoaid %>">
+            <%= pessoa.nome %>
+          </a>
+          <a href="/delete/<%= pessoa.pessoaid %>" 
+            onclick="return confirm('Tem certeza que deseja excluir?  <%= pessoa.pessoaid %>');">
+            X
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+   <hr />
+   <a href="/new">Cadastrar novo cliente</a>
+
+</body>
+
+</html>
